@@ -1,0 +1,30 @@
+[project]
+name = "pattern-trader-backend"
+version = "0.1.0"
+description = "Backend for Pattern Trader application"
+authors = [
+    {name = "Your Name", email = "you@example.com"},
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "ccxt",
+    "psycopg2-binary",
+    "pandas",
+    "numpy",
+    "opencv-python-headless",
+    "python-dotenv",
+    "sqlalchemy",
+    "pydantic",
+    "pydantic-settings",
+    "matplotlib",
+    "python-multipart"
+]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]

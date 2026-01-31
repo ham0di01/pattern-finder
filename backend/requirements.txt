@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy
+pandas
+numpy
+opencv-python-headless
+ccxt
+pydantic-settings
+python-multipart
+python-dotenv
+matplotlib
+scikit-learn
+scipy
+fastdtw
+statsmodels
+ta-lib

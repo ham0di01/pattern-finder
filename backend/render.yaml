@@ -1,0 +1,23 @@
+services:
+  # Backend API
+  - type: web
+    name: pattern-trader-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pattern-trader-db
+          property: connectionString
+      - key: USE_SQLITE
+        value: false
+    healthCheckPath: /health
+
+databases:
+  # PostgreSQL Database (free tier - 90 days)
+  - name: pattern-trader-db
+    databaseName: pattern_trader
+    user: pattern_user

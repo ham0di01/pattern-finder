@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  /* Cyber-Industrial Palette */
+  --bg-obsidian: #030304;
+  --bg-panel: #0a0a0c;
+  --bg-panel-transparent: rgba(10, 10, 12, 0.7);
+  
+  --accent-cyan: #00f0ff;
+  --accent-cyan-dim: rgba(0, 240, 255, 0.1);
+  --accent-cyan-glow: rgba(0, 240, 255, 0.4);
+  
+  --accent-green: #00ff9d;
+  --accent-red: #ff2a6d;
+  
+  --text-primary: #ededed;
+  --text-secondary: #8a8a9b;
+  --text-muted: #525260;
+  
+  --border-subtle: #1f1f26;
+  --border-active: #333340;
+}
+
+@theme inline {
+  --color-background: var(--bg-obsidian);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  
+  /* Extend Tailwind colors */
+  --color-obsidian: var(--bg-obsidian);
+  --color-panel: var(--bg-panel);
+  --color-cyan-main: var(--accent-cyan);
+  --color-neon-green: var(--accent-green);
+  --color-neon-red: var(--accent-red);
+  --color-border-subtle: var(--border-subtle);
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  background-image: 
+    linear-gradient(rgba(10, 10, 12, 0.8), rgba(10, 10, 12, 0.8)),
+    linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .03) 25%, rgba(255, 255, 255, .03) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .03) 75%, rgba(255, 255, 255, .03) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .03) 25%, rgba(255, 255, 255, .03) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .03) 75%, rgba(255, 255, 255, .03) 76%, transparent 77%, transparent);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-obsidian); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan); 
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--bg-panel-transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+.tech-border {
+  position: relative;
+}
+.tech-border::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 10px; height: 10px;
+  border-top: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+  pointer-events: none;
+}
+.tech-border::before {
+  content: '';
+  position: absolute;
+  bottom: -1px; right: -1px;
+  width: 10px; height: 10px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+  pointer-events: none;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--accent-cyan-glow);
+}
