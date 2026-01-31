@@ -2,6 +2,10 @@
 
 A web application for detecting and matching trading chart patterns using computer vision and historical market data. Upload a chart image to extract patterns and find similar historical occurrences across cryptocurrency markets.
 
+## Screenshots
+
+![Pattern Trader Interface](screenshots/pattern-trader.jpg)
+
 ## Features
 
 - **Image Pattern Recognition**: Upload chart images and automatically extract price patterns using computer vision
